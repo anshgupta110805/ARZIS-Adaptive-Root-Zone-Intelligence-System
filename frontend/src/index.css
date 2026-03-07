@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+:root {
+  --dashboard-bg: #F5F3EF;
+  --sidebar-bg: #FFFFFF;
+  --accent-green: #4A9F70;
+  --accent-orange: #E59F66;
+  --card-bg: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #7A7A7A;
+  --pill-orange: #FDE8D4;
+}
+
+.dark {
+  --dashboard-bg: #121212;
+  --sidebar-bg: #1E1E1E;
+  --card-bg: #2D2D2D;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A0A0A0;
+  --pill-orange: #3D2B1F;
+}
+
+@theme {
+  --color-dashboard-bg: var(--dashboard-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-accent-green: var(--accent-green);
+  --color-accent-orange: var(--accent-orange);
+  --color-card-bg: var(--card-bg);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-pill-orange: var(--pill-orange);
+}
+
+body {
+  background-color: var(--dashboard-bg);
+  filter: brightness(0.9);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
+}
+
+.dashboard-container {
+  max-width: 1440px;
+  min-height: 900px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.chart-line-green {
+  stroke: #A3C67C;
+  stroke-width: 3;
+  fill: none;
+}
+
+.chart-line-orange {
+  stroke: #E59F66;
+  stroke-width: 3;
+  fill: none;
+}

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Node / React
+node_modules/
+dist/
+build/
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Project Specific
+ralph-loop-for-antigravity/
+antigravity-kit/
+knowledge_base/
+adapters/
+GSD-STYLE.md
+PROJECT_RULES.md
+model_capabilities.yaml
+update_dashboard.py
+fallback_demo.py

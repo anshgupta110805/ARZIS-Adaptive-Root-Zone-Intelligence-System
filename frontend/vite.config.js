@@ -8,4 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  base: '/ARZIS-Adaptive-Root-Zone-Intelligence-System/',
 })

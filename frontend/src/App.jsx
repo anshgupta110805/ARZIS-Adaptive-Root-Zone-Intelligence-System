@@ -638,19 +638,17 @@ const App = () => {
       .finally(() => setLoadingKey("simulation", false));
   }, [preferences?.grid_size]);
 
-  // Fetch farmer and field
+  // Fetch farmer and field on mount
   useEffect(() => {
-    if (activeTab === "field") {
-      setLoadingKey("field", true);
-      Promise.all([
-        axios.get(`${API}/customer/1`),
-        axios.get(`${API}/field/1/details`),
-      ]).then(([fRes, fdRes]) => {
-        setFarmer(fRes.data);
-        setField(fdRes.data);
-      }).catch(() => { }).finally(() => setLoadingKey("field", false));
-    }
-  }, [activeTab]);
+    setLoadingKey("field", true);
+    Promise.all([
+      axios.get(`${API}/customer/1`),
+      axios.get(`${API}/field/1/details`),
+    ]).then(([fRes, fdRes]) => {
+      setFarmer(fRes.data);
+      setField(fdRes.data);
+    }).catch(() => { }).finally(() => setLoadingKey("field", false));
+  }, []);
 
   // Fetch preferences (On tab change to customization to ensure it's fresh)
   useEffect(() => {

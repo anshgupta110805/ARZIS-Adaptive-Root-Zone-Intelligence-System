@@ -682,12 +682,19 @@ const App = () => {
         setSimulation({
           metadata: { grid_size: size },
           kpis: {
-            yield: 12.5,
-            nitrogen: 85.0,
-            phosphorus: 42.0,
-            potassium: 110.0,
-            moisture: 68.0,
-            ph: 6.8
+            yield: 12.5 + Math.random(),
+            nitrogen: 80 + Math.random() * 20,
+            phosphorus: 40 + Math.random() * 10,
+            potassium: 100 + Math.random() * 30,
+            moisture: 65 + Math.random() * 10,
+            ph: 6.5 + Math.random() * 0.5
+          },
+          soil_data: {
+            N: [80 + Math.random() * 20],
+            P: [40 + Math.random() * 10],
+            K: [100 + Math.random() * 30],
+            pH: [6.5 + Math.random() * 0.5],
+            moisture: [65 + Math.random() * 10]
           }
         });
       })
@@ -750,9 +757,11 @@ const App = () => {
       // For demo: Update local state even if API fails
       setPreferences(formData);
     } finally {
-      // Automatically redirect to the Root-Zone map (Dashboard)
-      setActiveTab("dashboard");
-      setSaving(false);
+      // Force a slight delay for "wow" effect and reliability
+      setTimeout(() => {
+        setActiveTab("dashboard");
+        setSaving(false);
+      }, 600);
     }
   }, [setActiveTab]);
 

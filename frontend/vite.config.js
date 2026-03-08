@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     tailwindcss(),
     react()
   ],
-  base: '/ARZIS-Adaptive-Root-Zone-Intelligence-System/',
-})
+  base: command === 'build' ? '/ARZIS-Adaptive-Root-Zone-Intelligence-System/' : '/',
+}))

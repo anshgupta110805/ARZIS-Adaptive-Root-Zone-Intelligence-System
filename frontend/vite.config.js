@@ -8,5 +8,5 @@ export default defineConfig(({ command }) => ({
     tailwindcss(),
     react()
   ],
-  base: command === 'build' ? '/ARZIS-Adaptive-Root-Zone-Intelligence-System/' : '/',
+  base: '/',
 }))
